@@ -17,4 +17,6 @@ fetch(api)
 .then (array => funcion_ejecutar(array))
 }
 
+// agregar el .catch()
+
 export {endpoint, traerMemes}
