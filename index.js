@@ -1,53 +1,60 @@
 import { endpoint, traerMemes } from './api.js'
+import { reestructurarArray, filtrarPorMedida, ordernarporId} from './helpers.js'
 
-  // Re-Estructuramos el objeto meme.
-function reestructurarArray (arrayMemes) {
+let arrayMemes = 
+traerMemes(endpoint)
+.then(reestructurarArray)
+.then(memes => filtrarPorMedida(memes,500))
+.then(ordernarporId)
+.then(memes => {return memes})
 
-    let arrayMemeReconstruc = arrayMemes.map( meme => {
-        const {id, name, width, height, url} = meme
-        return {id, name, width, height, url}
-        }) 
 
-    return arrayMemeReconstruc
+// Elementos DOM
+let imagen_meme = document.getElementsByClassName("meme")[0]
+let h1 = document.querySelector("h1")
+let button = document.querySelector("button")
+let name = document.querySelector(".name")
 
-}
 
-  // Filtramos según criterio de medida
-function filtrar_y_Ordenar_Memes (array) {
-
-    let memesMenos500x500 = array.filter(function(meme){
-        if(meme.width >= 500 && meme.height >= 500){
-            return meme
+// Función Meme del Día
+function getMemeOfTheDay(array) {
+    array.then(memes => {
+            let dia = new Date().getDate()
+            render(imagen_meme, "url", memes[dia].url)
+            render(name, "text", memes[dia].name)
         }
-    })
-
-     memesMenos500x500.sort(function compare(a, b) {
-        return parseInt(a.id) - parseInt(b.id);
-      })
-     
-    console.log("organizados")
-    console.dir(memesMenos500x500)
-    return memesMenos500x500
+    )
 }
 
-function getMemeOfTheDay(arrayDeMemes) {
-
-    let dia = new Date().toJSON().slice(8,10)
-    console.log("El meme del día es...")
-    console.log(arrayDeMemes[parseInt(dia)])
-    return arrayDeMemes[parseInt(dia)]
+// Función Meme Random
+function getRandomMeme(array) {
+    array.then(
+        function(memes) {
+            let numeroRandom = Math.round(Math.random() * memes.length-1)
+            console.log("El meme random es... " + numeroRandom)
+            render(imagen_meme, "url", memes[numeroRandom].url)
+            render(name, "text", memes[numeroRandom].name)
+            render(h1, "text", "Random Meme!")
+            render(button, "text", "Get another random Meme!")
+        }
+    )
 }
 
-function getRandomMeme(arrayDeMemes) {
-
-    let numeroRandom = Math.round(Math.random() * arrayDeMemes.length-1)
-    console.log("El meme random es... " + numeroRandom)
-    console.log(arrayDeMemes[numeroRandom])
-    return arrayDeMemes[numeroRandom]
+// Función que renderiza en DOM
+function render (domElement, type, info) {
+    if(type == "url") {
+        domElement.src = info
+    } else if (type == "text") {
+        domElement.textContent = info
+    } else {
+        console.log("Falta el atributo")
+    } 
 }
 
-traerMemes(endpoint, reestructurarArray, filtrar_y_Ordenar_Memes, getMemeOfTheDay)
-traerMemes(endpoint, reestructurarArray, filtrar_y_Ordenar_Memes, getRandomMeme)
+// Botón Random Meme
+button.addEventListener("click", function(){
+    getRandomMeme(arrayMemes)
+} )
 
-
-
+//Inicializar
+getMemeOfTheDay(arrayMemes)
