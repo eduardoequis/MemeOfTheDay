@@ -7,6 +7,6 @@ Show you a different meme everyday, thanks the imgflip's API.
 
 
 # Built with
-HTML + CSS
-Javascript ES6
-[Imgflip API](https://api.imgflip.com/)
+- HTML + CSS
+- Javascript ES6
+- [Imgflip API](https://api.imgflip.com/)
