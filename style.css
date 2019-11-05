@@ -1,40 +1,75 @@
+
 body {
-    font-family: 'Fredoka One', cursive;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #424874
+}
+
+header {
+  background: #231651;
+  padding: 1%;
+  text-align: right;
+}
+
+a{
+  color: white;
+}
+
+footer{
+  color: #54597e;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+    position: absolute;
+    height: 40px;
+    font-size: 4rem;
+
 }
 
 h1 {
-    font-size: 700%;
-    text-align: center;
-    color: grey;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 14em;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: white;
 }
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  img {
-      width: 100%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 button {
-font-family: 'Fredoka One', cursive;
 letter-spacing: 5px;
-color: #494949;
+color: #231651;
 font-size: 400%;
-border-radius: 10px;
-background: #ffffff;
-padding: 2%;
+border-radius: 40px;
+background: #E9D758;
+padding: 1%;
 margin-top: 1.2%;
-border: 4px solid #494949;
+border: 4px solid #E9D758;
 transition: all 0.4s ease 0s;
 }
 
 button:hover {
 color: #ffffff;
-background: #4070f8;
-border-color: #4070f8;
+background: #231651;
+border-color: #231651;
 transition: all 0.4s ease 0s;
 }
 
@@ -43,8 +78,11 @@ button:focus {outline:0;}
 .memeContainer {
     text-align: center;
     position: relative;
-    height: 20%;
-    width: 20%;
+    height: 50vh;
+    width: 50vh;
+    padding: 1%;
+    border-radius: 2%;
+    background: #54597e;
 }
 
 .overlay {
@@ -55,7 +93,7 @@ button:focus {outline:0;}
     right: 0;
     opacity: 0;
     transition: .5s ease;
-    background-color: #4070f8;
+    background-color: #424874;
   }
 
   .overlay .name {
@@ -73,3 +111,7 @@ button:focus {outline:0;}
   .memeContainer:hover .overlay {
     opacity: 0.8;
   }
+
+  /*
+  https://coolors.co/424874-e9d758-e54b4b-231651-ffffff
+  */
