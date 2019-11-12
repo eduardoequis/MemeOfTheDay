@@ -1,0 +1,24 @@
+{
+  "name": "memeoftheday",
+  "version": "1.0.0",
+  "description": "Show you a different meme everyday, thanks the imgflip's API.",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss": "^1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwind build src/newstyle.css -o dist/compiled.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardoequis/MemeOfTheDay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardoequis/MemeOfTheDay/issues"
+  },
+  "homepage": "https://github.com/eduardoequis/MemeOfTheDay#readme"
+}
