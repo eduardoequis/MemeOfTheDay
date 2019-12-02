@@ -1,0 +1,21 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+    font-family: 'Catamaran', sans-serif;
+}
+
+.overlay {
+    transition: .5s ease;
+  }
+
+  .memeContainer:hover .overlay {
+    opacity: 0.8;
+  }
