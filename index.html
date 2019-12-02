@@ -12,26 +12,28 @@
 </head>
 
 <body class="bg-purple-700 flex flex-col min-h-screen">
-<header class="m-3 text-right text-2xl text-white">
+<header class="text-right text-2xl text-white p-2">
     <a href="https://github.com/eduardoequis/MemeOfTheDay"><i class="fab fa-github"></i></a>
 
 </header>
 <main class="container mx-auto w-4/5 flex flex-col text-center flex-grow">
-    <h1 class="text-4xl md:text-6xl py-4 text-white">Meme of the Day</h1>
+    <h1 class="text-4xl md:text-6xl pb-2 md:pb-0 text-white">Meme of the Day</h1>
     
-    <div class="memeContainer relative flex justify-center">
-        <img class="meme w-2/3 h-64 bg-purple-600 object-contain rounded-lg p-2 mb-4" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/225/white-question-mark-ornament_2754.png" alt="Meme">
+
+    <div class="memeContainer relative flex justify-center mx-auto">
+        <img class="meme bg-purple-600 object-contain rounded-lg p-2 mb-4 w-64 h-64" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/225/white-question-mark-ornament_2754.png" alt="Meme">
         <div class="overlay absolute inset-0 bg-purple-700 opacity-0 flex items-center">
-                <div class="name mx-auto font-extrabold text-white text-3xl"> Nombre </div>
-        </div>
+                <div class="name mx-auto font-extrabold text-white text-2xl"> Nombre </div>
+    </div>
+
        
     </div>
     <div>
-    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-xl md:text-3xl w-2/3">Get random Meme!</button>
+    <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-xl md:text-3xl w-2/3 md:w-1/3">Get random Meme!</button>
     </div>
 </main>
 
-<footer class="w-full text-sm text-center text-white bg-purple-800 p-4 pin-b">Hosted on Github <span class="opacity-25">●</span> Made by @eduardoequis <span class="opacity-25">●</span> 2019</footer>
+<footer class="bg-purple-900 w-full text-sm text-center text-white p-4 pin-b">Hosted on Github <span class="opacity-25">●</span> Made by @eduardoequis <span class="opacity-25">●</span> 2019</footer>
 
 </body>
 </html>
