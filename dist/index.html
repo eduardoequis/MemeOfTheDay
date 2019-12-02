@@ -12,26 +12,27 @@
     <title>Meme of the Day</title>
 </head>
 
-<body>
-<header><span style="font-size: 1.5rem; color: white;">
+<body class="bg-purple-700 flex flex-col min-h-screen">
+<header class="m-3 text-right text-2xl text-white">
     <a href="https://github.com/eduardoequis/MemeOfTheDay"><i class="fab fa-github"></i></a>
-</span>
+
 </header>
-<div class="container">
-    <h1>Meme of the Day</h1>
+<main class="container mx-auto w-4/5 flex flex-col text-center flex-grow">
+    <h1 class="text-4xl md:text-6xl py-4 text-white">Meme of the Day</h1>
     
-    <div class="memeContainer">
-        <img class="meme" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/225/white-question-mark-ornament_2754.png" alt="Meme">
-        <div class="overlay">
-                <div class="name"></div>
+    <div class="memeContainer relative flex justify-center">
+        <img class="meme w-full h-48 object-contain" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/225/white-question-mark-ornament_2754.png" alt="Meme">
+        <div class="overlay absolute inset-0 bg-gray-100 opacity-0 flex items-center">
+                <div class="mx-auto font-extrabold text-purple-700 text-3xl">  </div>
         </div>
        
     </div>
 
-    <button class="btn-get-random-meme bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get random Meme!</button>
+    <button class="btn-get-random-meme bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 my-4 rounded text-3xl">Get random Meme!</button>
     
-    <footer>Hosted on Github ● Made by @eduardoequis, 2019.</footer>
-</div>
+</main>
+
+<footer class="w-full text-sm text-center text-white bg-purple-800 p-4 pin-b">Hosted on Github <span class="opacity-25">●</span> Made by @eduardoequis <span class="opacity-25">●</span> 2019</footer>
 
     
 
