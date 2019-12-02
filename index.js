@@ -7,6 +7,9 @@ getMemes(endpoint)
 .then(memes => filterBySize(memes,500))
 .then(orderByID)
 .then(memes => {return memes})
+.catch(err => {
+    console.log("Este es el error:" + err)
+})
 
 
 // Elementos DOM
